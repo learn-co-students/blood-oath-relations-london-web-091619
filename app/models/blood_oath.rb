@@ -1,10 +1,14 @@
 class BloodOath
-  attr_reader :cult, :follower, :initiation_date
+  attr_reader :cult, :follower, :initiation_time
 
   @@all = []
 
   def self.all
     @@all
+  end
+
+  def self.first_oath
+    all.first
   end
 
   def save
@@ -14,7 +18,11 @@ class BloodOath
   def initialize(cult:, follower:)
     @cult = cult
     @follower = follower
-    @initiation_date = Time.new.strftime("%Y-%m-%d")
+    @initiation_time = Time.new
     save
+  end
+
+  def initiation_date
+    initiation_time.strftime("%Y-%m-%d")
   end
 end
