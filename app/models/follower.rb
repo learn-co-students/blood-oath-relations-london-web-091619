@@ -17,7 +17,7 @@ class Follower
   end
 
   def self.top_ten
-    all.sort_by { |follower| follower.cults.count }[-10, 10]
+    all.sort_by { |follower| follower.cults.count }.reverse.last(10)
   end
 
   def save
