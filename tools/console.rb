@@ -7,6 +7,7 @@ end
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
 
+c1 = Cult.new("Cultivator", "London", "1990", "Yo!", "18")
 binding.pry
 
 puts "Mwahahaha!" # just in case pry is buggy and exits
